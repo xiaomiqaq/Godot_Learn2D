@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccjjqlu381onj"]
+[gd_scene load_steps=5 format=3 uid="uid://ccjjqlu381onj"]
 
 [ext_resource type="Texture2D" uid="uid://dnhaahrxjuqfd" path="res://Asset/Level/TreeAndGrass.png" id="1_40eul"]
 [ext_resource type="Script" uid="uid://cvbhr3wmvqjvo" path="res://Game/Scene/grass.gd" id="1_3284k"]
 [ext_resource type="Script" uid="uid://jwyd1882ly1q" path="res://Game/Scene/random_region.gd" id="3_0kb55"]
-[ext_resource type="Script" uid="uid://up0wnemlf75o" path="res://Game/Script/StateMachine/PlayerStates/player_idel.gd" id="4_4e6ly"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bq7dl"]
 size = Vector2(40, 10)
@@ -32,13 +31,6 @@ region_enabled = true
 region_rect = Rect2(0, 0, 48, 32)
 script = ExtResource("3_0kb55")
 randomRegions = Array[Rect2]([Rect2(0, 0, 48, 32), Rect2(0, 32, 48, 32), Rect2(0, 64, 48, 32)])
-
-[node name="StateMachine" type="Node" parent="."]
-
-[node name="Idle" type="Node" parent="StateMachine"]
-script = ExtResource("4_4e6ly")
-
-[node name="Run" type="Node" parent="StateMachine"]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

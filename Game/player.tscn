@@ -1,9 +1,12 @@
-[gd_scene load_steps=67 format=3 uid="uid://bhka3vy3t3dme"]
+[gd_scene load_steps=70 format=3 uid="uid://bhka3vy3t3dme"]
 
 [ext_resource type="Texture2D" uid="uid://dt5om6h61m2o1" path="res://Asset/Animations/Player_Idle.png" id="1_s7hed"]
 [ext_resource type="Script" uid="uid://c1dag1hqtsqb" path="res://Game/player.gd" id="1_xhrf0"]
 [ext_resource type="Texture2D" uid="uid://dx35n5c6uckhk" path="res://Asset/Animations/Shadow.png" id="2_rj7j4"]
 [ext_resource type="Texture2D" uid="uid://bhm4cund2ew0r" path="res://Asset/Animations/Player_Run.png" id="3_0c3g1"]
+[ext_resource type="Script" uid="uid://dhbxft44er5k7" path="res://Game/Script/StateMachine/state_machine.gd" id="5_ltdye"]
+[ext_resource type="Script" uid="uid://up0wnemlf75o" path="res://Game/Script/StateMachine/PlayerStates/player_idel.gd" id="6_wxy0c"]
+[ext_resource type="Script" uid="uid://bkogfvqwgpts0" path="res://Game/Script/StateMachine/PlayerStates/player_run.gd" id="7_oah4x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b8828"]
 radius = 4.0
@@ -491,3 +494,12 @@ position = Vector2(0, -1)
 texture = ExtResource("2_rj7j4")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("5_ltdye")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("6_wxy0c")
+
+[node name="Run" type="Node" parent="StateMachine"]
+script = ExtResource("7_oah4x")
