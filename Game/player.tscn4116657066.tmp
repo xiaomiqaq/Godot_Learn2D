@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bhm4cund2ew0r" path="res://Asset/Animations/Player_Run.png" id="3_0c3g1"]
 [ext_resource type="Script" uid="uid://dhbxft44er5k7" path="res://Game/Script/StateMachine/state_machine.gd" id="5_ltdye"]
 [ext_resource type="Script" uid="uid://up0wnemlf75o" path="res://Game/Script/StateMachine/PlayerStates/player_idel.gd" id="6_wxy0c"]
-[ext_resource type="Script" uid="uid://bkogfvqwgpts0" path="res://Game/Script/StateMachine/PlayerStates/player_run.gd" id="7_oah4x"]
+[ext_resource type="Script" path="res://Game/Script/StateMachine/PlayerStates/player_run.gd" id="7_oah4x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b8828"]
 radius = 4.0
