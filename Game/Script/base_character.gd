@@ -7,6 +7,8 @@ var facingDirection: String = "Down"
 var animationToPlay: String
 @onready var stateMachine:StateMachine = $StateMachine
 
+@export var showDebugVisual:bool
+
 func GetDirectionName() -> String:
 	if inputDirection == Vector2.ZERO:
 		return facingDirection

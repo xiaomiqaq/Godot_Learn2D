@@ -10,7 +10,10 @@ func UpdatePhysics(delta: float):
 
 func Update():
 	if parentStateMachine.debug_label:
-		parentStateMachine.debug_label.text = name
+		if character.showDebugVisual:
+			parentStateMachine.debug_label.text = name
+		else:
+			parentStateMachine.debug_label.visible = false
 func Enter():
 	pass
 	

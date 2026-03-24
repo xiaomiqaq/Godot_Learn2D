@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ccjjqlu381onj"]
 
 [ext_resource type="Texture2D" uid="uid://dnhaahrxjuqfd" path="res://Asset/Level/TreeAndGrass.png" id="1_40eul"]
-[ext_resource type="Script" uid="uid://cvbhr3wmvqjvo" path="res://Game/Scene/grass.gd" id="1_3284k"]
+[ext_resource type="Script" uid="uid://cvbhr3wmvqjvo" path="res://Game/Script/grass.gd" id="1_3284k"]
 [ext_resource type="Script" uid="uid://jwyd1882ly1q" path="res://Game/Scene/random_region.gd" id="3_0kb55"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bq7dl"]

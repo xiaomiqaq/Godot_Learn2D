@@ -494,6 +494,11 @@ position = Vector2(0, -1)
 texture = ExtResource("2_rj7j4")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_left = -900
+limit_top = -500
+limit_right = 500
+limit_bottom = 700
+limit_smoothed = true
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("5_ltdye")

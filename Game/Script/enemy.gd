@@ -15,8 +15,11 @@ func _process(delta: float) -> void:
 		return
 	playerDirection = player.global_position - global_position
 	playerDirection = playerDirection.normalized()
-	line2d.points[1] = playerDirection * 40
-	
+	if showDebugVisual:
+		line2d.points[1] = playerDirection * 40
+	else:
+		line2d.points[1] = Vector2.ZERO
+		
 	playerDirection.y = -playerDirection.y
 	playerAngle = rad_to_deg(playerDirection.angle()) 
 	if playerAngle < 0:
