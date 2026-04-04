@@ -22,8 +22,8 @@ func _ready() -> void:
 	var endSkewBack = -startSkewBack
 	
 	skewTweenBack = get_tree().create_tween().set_loops();
-	skewTweenBack.tween_property(sprite2D, "skew", endSkewBack, 1.5).from(startSkewBack)
-	skewTweenBack.tween_property(sprite2D, "skew", startSkewBack, 1.5).from(endSkewBack)
+	skewTweenBack.tween_property(sprite2DBack, "skew", endSkewBack, 1.5).from(startSkewBack)
+	skewTweenBack.tween_property(sprite2DBack, "skew", startSkewBack, 1.5).from(endSkewBack)
 	skewTweenBack.set_ease(Tween.EASE_IN)
 	
 
