@@ -1,6 +1,17 @@
 extends CharacterBody2D
 class_name  BaseCharacter
 
+#hp
+@export var maxHealth = 100
+@onready var currentHealth = maxHealth:
+	set(value): 
+		currentHealth = clamp(value, 0, maxHealth)
+		if currentHealth == 0:
+			isDead = true
+@export var attackDamage = 50
+var isDead = false
+
+var knockBackDirection : Vector2 #击退距离
 var inputDirection : Vector2 = Vector2.ZERO
 var facingDirection: String = "Down"
 @onready var animateSprite2D:AnimatedSprite2D = $AnimatedSprite2D
@@ -26,3 +37,21 @@ func GetDirectionName() -> String:
 
 func UpdateAnmation():
 	animateSprite2D.play(stateMachine.currentState.name + "_" + GetDirectionName())
+
+#每当角色受伤时，调用getHit
+func GetHit(damage: int, fromPoint = Vector2.Zero):
+	if isDead: 
+		return
+	currentHealth -= damage
+	StartBlink()
+	if isDead:
+		stateMachine.SwitchTo("Die")
+	else:
+		stateMachine.SwitchTo("Hurt")
+		
+#
+func UpdateBlink(newValue: float):
+	animateSprite2D.set_instance_shader_parameter("Blink", newValue);
+func StartBlink():
+	var blink_tween = get_tree().create_tween()
+	blink_tween.tween_method(UpdateBlink, 1.0, 0.0, 0.3)

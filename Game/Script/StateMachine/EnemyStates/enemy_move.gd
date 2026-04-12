@@ -9,7 +9,7 @@ var speed = 50
 func Enter():
 	super.Enter()
 	player_pos_update_timer.start()
-	
+	navigation_agent_2d.debug_enabled = character.showDebugVisual
 
 func Update():
 	super.Update()

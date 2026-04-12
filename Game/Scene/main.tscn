@@ -772,6 +772,7 @@ tile_set = SubResource("TileSet_rjaet")
 script = ExtResource("5_uriyw")
 
 [node name="EnemyGroup" type="Node2D" parent="Level"]
+y_sort_enabled = true
 
 [node name="Enemy" parent="Level/EnemyGroup" instance=ExtResource("6_rjaet")]
 position = Vector2(-340, 222)

@@ -1,8 +1,5 @@
 extends BaseCharacter
 
-
-
-
 const SPPED = 150
 const ACCELERATE = 5
 
