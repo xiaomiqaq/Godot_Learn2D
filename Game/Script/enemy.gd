@@ -1,5 +1,5 @@
 extends BaseCharacter
-
+class_name EnemyCharacter
 @onready var line2d : Line2D = $Line2D
 
 var player: BaseCharacter

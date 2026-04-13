@@ -1,7 +1,7 @@
 [gd_scene load_steps=102 format=3 uid="uid://bhka3vy3t3dme"]
 
 [ext_resource type="Texture2D" uid="uid://dt5om6h61m2o1" path="res://Asset/Animations/Player_Idle.png" id="1_s7hed"]
-[ext_resource type="Script" uid="uid://c1dag1hqtsqb" path="res://Game/player.gd" id="1_xhrf0"]
+[ext_resource type="Script" uid="uid://c1dag1hqtsqb" path="res://Game/Script/player.gd" id="1_xhrf0"]
 [ext_resource type="Texture2D" uid="uid://dx35n5c6uckhk" path="res://Asset/Animations/Shadow.png" id="2_rj7j4"]
 [ext_resource type="Texture2D" uid="uid://cku04u7wtpu28" path="res://Asset/Animations/Player_Attack.png" id="2_wxy0c"]
 [ext_resource type="Texture2D" uid="uid://bhm4cund2ew0r" path="res://Asset/Animations/Player_Run.png" id="3_0c3g1"]
@@ -703,7 +703,6 @@ y_sort_enabled = true
 collision_layer = 2
 collision_mask = 11
 script = ExtResource("1_xhrf0")
-showDebugVisual = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_b8828")
@@ -748,7 +747,7 @@ text = "state"
 
 [node name="AttackHitBox" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 4
+collision_mask = 12
 
 [node name="CollisionShape2D_Up" type="CollisionShape2D" parent="AttackHitBox"]
 position = Vector2(0, -40)

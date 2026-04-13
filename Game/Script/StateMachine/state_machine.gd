@@ -19,7 +19,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	currentState.UpdatePhysics(delta)
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	currentState.Update()
 	
 func SwitchTo(targetState: String):

@@ -28,7 +28,7 @@ region_rect = Rect2(0, 96, 48, 32)
 texture = ExtResource("1_40eul")
 offset = Vector2(0, -10)
 region_enabled = true
-region_rect = Rect2(0, 0, 48, 32)
+region_rect = Rect2(0, 64, 48, 32)
 script = ExtResource("3_0kb55")
 randomRegions = Array[Rect2]([Rect2(0, 0, 48, 32), Rect2(0, 32, 48, 32), Rect2(0, 64, 48, 32)])
 

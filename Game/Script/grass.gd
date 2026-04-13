@@ -1,5 +1,5 @@
 extends Area2D
-
+class_name Grass
 var scaleTween: Tween
 var startScale:Vector2 = Vector2(1.0,1.0)
 var endScale:Vector2 = Vector2(1.0, 0.5)
@@ -8,6 +8,8 @@ var skewTween: Tween
 var skewTweenBack: Tween
 @onready var sprite2DBack:Sprite2D = $Sprite2D_Back
 @onready var sprite2D:Sprite2D = $Sprite2D
+const GRASS_CUT_VSX = preload("res://Game/Scene/grass_cut_vfx.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var startSkew = deg_to_rad(randf_range(-10, 10))
@@ -42,3 +44,17 @@ func CrateNewScaleTween(targetVal: Vector2, duration: float ):
 	scaleTween = get_tree().create_tween()
 	scaleTween.tween_property(sprite2D, "scale", targetVal, duration)
 	scaleTween.set_ease(Tween.EASE_OUT)
+	
+	
+func GetCut():
+	if scaleTween:
+		scaleTween.kill()
+	if skewTween:
+		skewTween.kill()
+	if skewTweenBack:
+		skewTweenBack.kill()
+		
+	var grassCutVFXNode = GRASS_CUT_VSX.instantiate() as Node2D
+	grassCutVFXNode.global_position = global_position
+	get_parent().add_child(grassCutVFXNode)
+	queue_free()
