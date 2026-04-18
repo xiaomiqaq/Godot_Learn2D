@@ -37,9 +37,8 @@ func Update():
 
 func Exit():
 	super.Exit()
-	if attackCollisionShape:
-		attackCollisionShape.disabled = true
-
+	attackCollisionShape.set_deferred("disabled", true)
+	
 func _on_attack_hit_box_area_entered(area: Area2D) -> void:
 	var grassNode = area as Grass
 	if grassNode:

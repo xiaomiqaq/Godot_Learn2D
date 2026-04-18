@@ -17,6 +17,11 @@ func Update():
 	
 func UpdatePhysics(delta: float):
 	super.UpdatePhysics(delta)
+	
+	if character.player.isDead == true:
+		parentStateMachine.SwitchTo("Idle")
+		
+	
 	direction = character.global_position.direction_to(navigation_agent_2d.get_next_path_position())
 	
 	if !navigation_agent_2d.is_target_reached():

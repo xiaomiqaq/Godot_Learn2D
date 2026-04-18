@@ -1009,20 +1009,21 @@ default_color = Color(0, 0.56078434, 0.35686275, 1)
 color = Color(0.9033451, 0.38903466, 0.6199918, 0.09019608)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-target_desired_distance = 40.0
+target_desired_distance = 20.0
 avoidance_enabled = true
 radius = 80.0
 max_speed = 20.0
 
 [node name="PlayerPosUpdateTimer" type="Timer" parent="."]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D_Body" type="Area2D" parent="."]
 collision_layer = 4
-collision_mask = 0
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_Body"]
 position = Vector2(0, -26)
 shape = SubResource("CircleShape2D_gifiw")
 
 [connection signal="velocity_computed" from="NavigationAgent2D" to="StateMachine/Move" method="_on_navigation_agent_2d_velocity_computed"]
 [connection signal="timeout" from="PlayerPosUpdateTimer" to="StateMachine/Move" method="_on_player_pos_update_timer_timeout"]
+[connection signal="area_entered" from="Area2D_Body" to="." method="_on_area_2d_area_entered"]

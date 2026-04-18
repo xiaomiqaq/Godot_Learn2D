@@ -7,6 +7,9 @@ class_name BaseCharacter
 		currentHealth = clamp(value, 0, maxHealth)
 		if currentHealth == 0:
 			isDead = true
+			area_2d_body.set_deferred("monitoring", false) 
+			area_2d_body.set_deferred("monitorable", false) 
+			
 @export var attackDamage = 50
 var isDead = false
 
@@ -16,7 +19,7 @@ var facingDirection: String = "Down"
 @onready var animateSprite2D: AnimatedSprite2D = $AnimatedSprite2D
 var animationToPlay: String
 @onready var stateMachine: StateMachine = $StateMachine
-
+@onready var area_2d_body: Area2D = $Area2D_Body
 @export var showDebugVisual: bool
 
 func GetDirectionName() -> String:
