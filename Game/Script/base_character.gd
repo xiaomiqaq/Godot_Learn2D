@@ -12,6 +12,7 @@ class_name BaseCharacter
 			
 @export var attackDamage = 50
 var isDead = false
+var isInvincible = false    #是否无敌
 
 var knockBackDirection: Vector2
 var inputDirection: Vector2 = Vector2.ZERO
@@ -41,7 +42,7 @@ func UpdateAnmation():
 	animateSprite2D.play(stateMachine.currentState.name + "_" + GetDirectionName())
 
 func GetHit(damage: int, fromPoint = Vector2.ZERO):
-	if isDead:
+	if isDead || isInvincible:
 		return
 	currentHealth -= damage
 	knockBackDirection = (global_position - fromPoint).normalized()
@@ -58,3 +59,8 @@ func UpdateBlink(newValue: float):
 func StartBlink():
 	var blink_tween = get_tree().create_tween()
 	blink_tween.tween_method(UpdateBlink, 1.0, 0.0, 0.3)
+
+
+# 无敌xiaoguo
+func UpdateInvincibleEffect(newValue: bool):
+	animateSprite2D.set_instance_shader_parameter("InvincibleEffect", newValue)
