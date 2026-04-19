@@ -6,7 +6,9 @@ func Enter():
 
 func Update():
 	super.Update()
-
+	if character.animateSprite2D.frame_progress == 1:
+		parentStateMachine.SwitchTo("Idle")
+	
 func UpdatePhysics(delta: float):
 	super.UpdatePhysics(delta)
 	

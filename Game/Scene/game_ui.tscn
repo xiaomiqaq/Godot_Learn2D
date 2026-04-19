@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckqhse1rfaypm"]
+
+[ext_resource type="Script" uid="uid://bqpv45fnjowv1" path="res://Game/Script/game_ui_manager.gd" id="1_17s7d"]
+[ext_resource type="Theme" uid="uid://pom7h0qosoll" path="res://Game/Scene/UI_Threme/game_ui_theme.tres" id="1_d2evx"]
+
+[node name="CanvasLayer_GameUI" type="CanvasLayer"]
+script = ExtResource("1_17s7d")
+
+[node name="Control_HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Control_HUD"]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 420.0
+offset_bottom = 60.0
+theme = ExtResource("1_d2evx")
+value = 17.17
+show_percentage = false
+
+[node name="Control_GameOver" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control_GameOver"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label_GameOver" type="Label" parent="Control_GameOver"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -11.5
+offset_right = 43.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_d2evx")
+text = "Game Over"
+
+[node name="Button_Restart" type="Button" parent="Control_GameOver"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 56.0
+offset_right = 100.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_d2evx")
+text = "Restart"

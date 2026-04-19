@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://c03y27tl7v8qi"]
+[gd_scene load_steps=18 format=4 uid="uid://c03y27tl7v8qi"]
 
 [ext_resource type="Texture2D" uid="uid://carcavj8infv8" path="res://Asset/Level/Background_Grass.png" id="1_itxqv"]
 [ext_resource type="PackedScene" uid="uid://bhka3vy3t3dme" path="res://Game/player.tscn" id="2_t4ibd"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dnhaahrxjuqfd" path="res://Asset/Level/TreeAndGrass.png" id="4_4884x"]
 [ext_resource type="Script" uid="uid://b3hnncwx7q28g" path="res://Game/Scene/grass_generator_tilemap_layer.gd" id="5_uriyw"]
 [ext_resource type="PackedScene" uid="uid://ddfn5wn17jsml" path="res://Game/enemy.tscn" id="6_rjaet"]
+[ext_resource type="PackedScene" uid="uid://ckqhse1rfaypm" path="res://Game/Scene/game_ui.tscn" id="7_uq3o1"]
 [ext_resource type="PackedScene" uid="uid://c0ie02lwvsyn3" path="res://Game/Scene/tree.tscn" id="7_xlydu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v0l8b"]
@@ -806,6 +807,8 @@ position = Vector2(-504, 315)
 
 [node name="Enemy11" parent="Level/EnemyGroup" instance=ExtResource("6_rjaet")]
 position = Vector2(-620, 205)
+
+[node name="CanvasLayer_GameUI" parent="Level/EnemyGroup" instance=ExtResource("7_uq3o1")]
 
 [node name="TreeGroup" type="Node2D" parent="Level"]
 y_sort_enabled = true
